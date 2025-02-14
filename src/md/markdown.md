@@ -1,6 +1,6 @@
 # 마크다운 문법
 
-> Authored by [**Youngjune-Choi**](https://github.com/jjmullan/home-work) (_2025. 2. 14_)<br />
+> Authored by **Youngjune-Choi** [Notion](https://choiyoungjune.notion.site/13-16521bc2456c80b8b025c30803efc343?pvs=4) [Github](https://github.com/jjmullan/home-work)<br />
 > Sourced by **[CommonMark](https://spec.commonmark.org/0.31.2/)** (_version: 0.31.2_) & **[GFM](https://github.github.com/gfm/#what-is-github-flavored-markdown-)** (_version: 0.29-gfm_)
 
 - [제목](#제목)
