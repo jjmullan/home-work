@@ -11,12 +11,17 @@
 - [리스트(1)](#리스트1)
 - [리스트(-)](#리스트-)
 - [하이퍼링크](#하이퍼링크)
+- [GFM 오토링크](#gfm-오토링크)
 - [이미지](#이미지)
 - [테이블](#테이블)
-  - [GFM 테이블](#gfm-테이블)
+- [GFM 테이블](#gfm-테이블)
 - [인라인 코드](#인라인-코드)
 - [블록 코드](#블록-코드)
-- [GFM To-do](#gfm-to-do)
+- [GFM 체크박스](#gfm-체크박스)
+- [GFM 태그 필터](#gfm-태그-필터)
+- [GFM 하이라이트 박스](#gfm-하이라이트-박스)
+
+<br />
 
 ## 제목
 
@@ -31,8 +36,6 @@
 ##### `#####`를 사용하면 h5 태그를 사용할 수 있습니다.
 
 ###### `######`를 사용하면 h6 태그를 사용할 수 있습니다.
-
-<br />
 
 &#9888; warning. <br />- #와 텍스트 사이에 띄어쓰기( )가 포함되어야 한다.<br />- #가 7개 이상인 경우, p 태그로 인식된다.<br />- 반드시 #로 문장이 시작해야 한다.
 
@@ -82,6 +85,12 @@
 
 <br />
 
+## GFM 오토링크
+
+www 로 시작하는 URL 을 입력하면 자동으로 링크 https://bootcamp.likelion.net/ 를 만들 수 있습니다.
+
+<br />
+
 ## 이미지
 
 `![이미지설명](URL)` 형태로 작성하면<br />
@@ -117,6 +126,8 @@
 
 ` `` `를 넣어 인라인 코드 형태로 포매팅이 가능합니다.
 
+<br />
+
 ## 블록 코드
 
 ```
@@ -132,7 +143,9 @@
 
 e.g. [JavaScript, C-like, Other(python, ...), Styling(css, ...), Markup(HTML, XML, ...), Command Prompt(bash, powershell, ...), Configure/Data Files(json, ignore, ...), etc.](https://developer.mozilla.org/en-US/docs/MDN/Writing_guidelines/Howto/Markdown_in_MDN)
 
-## GFM To-do
+<br />
+
+## GFM 체크박스
 
 - HTML 태그의 `<input type="checkbox" />`를 대체할 수 있습니다.
 
@@ -142,3 +155,33 @@ e.g. [JavaScript, C-like, Other(python, ...), Styling(css, ...), Markup(HTML, XM
   - [x] 중요한 할일 1
   - [ ] 중요한 할일 2
 - [x] 오늘 할일 2
+
+<br />
+
+## GFM 태그 필터
+
+- Github 에서 Md 파일을 작성할 때 위험한 태그를 필터링하고, 안전한 태그만 렌더링하여 표시할 수 있다.
+- 필터링 태그: `<script>`, `<style>`, `<ifframe>`, `<object>`, `<embed>` 등
+
+<br />
+
+## GFM 하이라이트 박스
+
+- 첫 줄에 [!NOTE], [!WARNING], [!CALLOUT] 을 선언하여, 해당 blockquote 를 하이라이트 박스로 만들 수 있습니다.
+- GFM 을 지원하는 Github 에서만 제대로 표시될 수 있습니다.
+
+[!NOTE]
+이것은 중요한 참고 사항입니다. 이 정보를 잘 기억해 두세요!
+
+[!WARNING]
+이 작업을 실행하기 전에 중요한 주의사항을 확인해야 합니다!
+
+[!CALLOUT]
+이 부분은 특별히 강조가 필요한 부분입니다. 중요합니다!
+
+<style>  
+  li:nth-child(4), li:nth-child(9), li:nth-child(12), li:nth-child(15), li:nth-child(16), li:nth-child(17) {
+    color: orange;
+    list-style: square;
+  }
+</style>
