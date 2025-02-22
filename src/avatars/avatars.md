@@ -22,7 +22,7 @@
 
 ```html
 <picture class="avatar__img">
-    <img src="images/face1.jpg" alt="여성 얼굴 - 1" width="71.111px" height="71.111px" loading="lazy" />
+    <img src="images/face1.jpg" alt="여성 얼굴 - 1" width="71" height="71" loading="lazy" />
   </picture>
 ```
 
@@ -70,7 +70,9 @@ normal flow 에서 부모 요소의 영역이 자식 요소의 영억보다 클 
 
 우선, indicator 항목이 사용자와 상호작용하는 요소일까, 아니면 디자인적으로 꾸며주는 용도일까를 우선적으로 생각했다. 하지만 이미지를 바탕으로 어떠한 정해진 패턴이 있다고 판단이 되지 않았고, 데이터로 확인할 수 있는 구분되는 속성이 있을 것이라고 판단했다.
 
-처음에는 가상 요소 선택자를 사용하여 상호작용할 수 없는 디자인 요소로 적용해야 겠다고 생각했다. 그러다, '사용자가 해당 프로필에 대한 선호도를 나타내는 상호작용 요소일 수 있겠다'는 생각에, 해당 요소를 input 요소의 checkbox 속성을 사용해보기로 했다.
+처음에는 가상 요소 선택자를 사용하여 상호작용할 수 없는 디자인 요소로 적용해야 겠다고 생각했다. 그러다 ~~'사용자가 해당 프로필에 대한 선호도를 나타내는 상호작용 요소일 수 있겠다'는 생각~~ (수정) 아바타의 온/오프라인 접속 유무에 따라 색이 변경되는 것이라고 생각했고 추후 JS 함수를 통해 checked 속성을 true/false 로 제어할 수 있을 것이라고 판단하여, 해당 요소를 input 요소의 checkbox 속성을 사용해보기로 했다.
+
+(수정) 
 
 하지만, input 의 checkbox 요소가 picture 가 아닌 img 의 위치에서 absolute 를 가지면 된다고 판단했고, 이를 위해 html 코드의 수정이 불가피했다. 따라서, picture 은 추후 img 소스를 source 속성을 사용하여 관리하기 위한 용도로만 남겨두고, picture 를 form 요소로 감싼 뒤 picture 클래스를 이전하여 사용하기로 했다. 그 결과, 내가 원하는 대로 input 의 checkbox 요소가 avatar__img 에 할당한 64*64 사이즈를 기준으로 absolute 가 적용되었다.
 
@@ -228,6 +230,8 @@ checkbox 를 CSS 로 형태를 변경시키는 방법을 개인적으로 적용�
   </form>
 ```
 
+<br />
+
 ### 4. 조직체 organism 단계 - layout
 
 - #hash : 
@@ -238,6 +242,8 @@ width 와 padding 값을 넣었을 때, 콘텐츠 박스 영역이 적용했던 
 
 ![결과물](/src/avatars/images/organism:layout:01.png)
 
+<br />
+
 ### 5. 템플릿 template 단계 - Avatar 레이어
 
 - #hash : 5e2cd8c
@@ -246,11 +252,13 @@ width 와 padding 값을 넣었을 때, 콘텐츠 박스 영역이 적용했던 
 
 ![결과물](/src/avatars/images/template:Avatar:01.png)
 
-- #hash : 
+- #hash : 1d6c3ab
 
-Notion 에서 언급된 상자 내부 여백 100px 을 수정 적용하였다. 이때, 기존에 설정했던 box-sizing 이 border-box 을 삭제하여 콘텐츠 영역의 그리드를 보존하였다.
+(수정) Notion 에서 언급된 상자 내부 여백 100px 을 수정 적용하였다. 이때, 기존에 설정했던 box-sizing 이 border-box 을 삭제하여 콘텐츠 영역의 그리드를 보존하였다.
 
 ![결과물](/src/avatars/images/template:Avatar:02.png)
+
+<br />
 
 ### 6. 과제를 하면서 알게 된 점
 
