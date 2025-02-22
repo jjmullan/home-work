@@ -246,6 +246,12 @@ width 와 padding 값을 넣었을 때, 콘텐츠 박스 영역이 적용했던 
 
 ![결과물](/src/avatars/images/template:Avatar:01.png)
 
+- #hash : 
+
+Notion 에서 언급된 상자 내부 여백 100px 을 수정 적용하였다. 이때, 기존에 설정했던 box-sizing 이 border-box 을 삭제하여 콘텐츠 영역의 그리드를 보존하였다.
+
+![결과물](/src/avatars/images/template:Avatar:02.png)
+
 ### 6. 과제를 하면서 알게 된 점
 
 첫째, 디자이너와 소통하지 않으면, 해당 인터페이스를 보았을 때 어떤 기능을 위해 만들었는 지 알 수 없을 것 같다.

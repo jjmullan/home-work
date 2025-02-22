@@ -26,7 +26,7 @@ main {
 .avatar {
   width: 396px;
   height: 195px;
-  padding: 20px;
+  padding: 100px;
 
   display: flex;
   justify-content: center;
@@ -35,7 +35,7 @@ main {
   gap: 20px;
   flex-wrap: wrap;
 
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
 
   .avatar__img {
     width: 64px;
