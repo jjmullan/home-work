@@ -11,8 +11,14 @@
   <link rel="stylesheet" href="./styles/avatars.css" />
 </head>
 <body>
-  <picture class="avatar__img">
-    <img src="images/face1.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-  </picture>
+  <form class="avatar__img">
+    <picture class="avatar__img clip">
+      <img src="images/face1.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
+    </picture>
+    <div>
+      <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
+      <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-01" />
+    </div>
+  </form>
 </body>
 </html>
