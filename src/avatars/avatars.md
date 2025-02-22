@@ -11,29 +11,35 @@
 3. 유기체 organisms : 'layout' 요소
 4. 템플릿 Templates : 'Avatars' 레이어
 
-
 ### 2-1. 원소 atoms 단계 - group
 
 - #hash : da29b94
 
 가장 먼저, 원소에 해당하는 요소인 'group'과 'indicator'를 완성시킨다.
 
-'group' 에는 71.11px * 71.11px 의 프로필 이미지와, 64px * 64xp 의 마스킹된 영역이 포함된다. 이에, 나는 다음과 같이 코드를 작성했다.
+'group' 에는 71.11px _ 71.11px 의 프로필 이미지와, 64px _ 64xp 의 마스킹된 영역이 포함된다. 이에, 나는 다음과 같이 코드를 작성했다.
 
 ```html
 <picture class="avatar__img">
-    <img src="images/face1.jpg" alt="여성 얼굴 - 1" width="71" height="71" loading="lazy" />
-  </picture>
+  <img
+    src="images/face1.jpg"
+    alt="여성 얼굴 - 1"
+    width="71"
+    height="71"
+    loading="lazy"
+  />
+</picture>
 ```
 
 ```css
 .avatar__img {
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   /* dev 모드를 확인해보니, mask 영역에 1px 의 border 가 있는 것을 확인했다. */
   /* 하지만 이게 의미가 있는 건지는 모르겠다. */
   border: 1px solid rgba(0, 0, 0, 0.2);
@@ -47,22 +53,22 @@
 
 💡 알게된 점
 
-normal flow 에서 부모 요소의 영역이 자식 요소의 영억보다 클 경우, overflow: hidden 또는 overflow: clip 을 사용하여 숨김 수 있다. 
+normal flow 에서 부모 요소의 영역이 자식 요소의 영억보다 클 경우, overflow: hidden 또는 overflow: clip 을 사용하여 숨김 수 있다.
 
 ```css
 .avatar__img {
-  width: 64px; height: 64px;
+  width: 64px;
+  height: 64px;
 
   display: flex;
   justify-content: center;
   align-items: center;
-  
+
   border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 50%;
-  overflow:hidden;
+  overflow: hidden;
 }
 ```
-
 
 ### 2-2. 원소 atoms 단계 - indicator
 
@@ -72,22 +78,34 @@ normal flow 에서 부모 요소의 영역이 자식 요소의 영억보다 클 
 
 처음에는 가상 요소 선택자를 사용하여 상호작용할 수 없는 디자인 요소로 적용해야 겠다고 생각했다. 그러다 ~~'사용자가 해당 프로필에 대한 선호도를 나타내는 상호작용 요소일 수 있겠다'는 생각~~ (수정) 아바타의 온/오프라인 접속 유무에 따라 색이 변경되는 것이라고 생각했고 추후 JS 함수를 통해 checked 속성을 true/false 로 제어할 수 있을 것이라고 판단하여, 해당 요소를 input 요소의 checkbox 속성을 사용해보기로 했다.
 
-(수정) 
+(수정)
 
-하지만, input 의 checkbox 요소가 picture 가 아닌 img 의 위치에서 absolute 를 가지면 된다고 판단했고, 이를 위해 html 코드의 수정이 불가피했다. 따라서, picture 은 추후 img 소스를 source 속성을 사용하여 관리하기 위한 용도로만 남겨두고, picture 를 form 요소로 감싼 뒤 picture 클래스를 이전하여 사용하기로 했다. 그 결과, 내가 원하는 대로 input 의 checkbox 요소가 avatar__img 에 할당한 64*64 사이즈를 기준으로 absolute 가 적용되었다.
+하지만, input 의 checkbox 요소가 picture 가 아닌 img 의 위치에서 absolute 를 가지면 된다고 판단했고, 이를 위해 html 코드의 수정이 불가피했다. 따라서, picture 은 추후 img 소스를 source 속성을 사용하여 관리하기 위한 용도로만 남겨두고, picture 를 form 요소로 감싼 뒤 picture 클래스를 이전하여 사용하기로 했다. 그 결과, 내가 원하는 대로 input 의 checkbox 요소가 avatar\_\_img 에 할당한 64\*64 사이즈를 기준으로 absolute 가 적용되었다.
 
 checkbox 를 CSS 로 형태를 변경시키는 방법을 개인적으로 적용해보았으나, 방법을 찾기 쉽지 않았다. 이에, 포털사이트 검색을 통해 [appearance 속성과 가상 클래스 선택자인 :hover 를 사용한 외부 소스](https://gurtn.tistory.com/106)를 찾게 되었고, 정상 적용된 것을 볼 수 있었다.
 
 ```html
-<form class="avatar__img">
-    <picture class="avatar__img clip">
-      <img src="images/face1.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-    </picture>
-    <div>
-      <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-      <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-01" />
-    </div>
-</form>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face1.jpg"
+      alt="여성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-01" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-01"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-01"
+    />
+  </form>
+</div>
 ```
 
 ```css
@@ -123,7 +141,7 @@ checkbox 를 CSS 로 형태를 변경시키는 방법을 개인적으로 적용�
 
 .avatar__check {
   margin: 0;
-  
+
   position: absolute;
   right: 0;
   bottom: 0;
@@ -138,7 +156,7 @@ checkbox 를 CSS 로 형태를 변경시키는 방법을 개인적으로 적용�
 
   &:checked {
     border: 1px solid #fff;
-    background: #4CFE88;
+    background: #4cfe88;
   }
 }
 ```
@@ -147,94 +165,188 @@ checkbox 를 CSS 로 형태를 변경시키는 방법을 개인적으로 적용�
 
 - #hash : 6aec9a8
 
-원소 단계인 group(picture.avatar__img clip) 과 indicator(div)가 완성되었다. 두 요소를 하나의 그룹으로 묶어 분자 단계 요소를 만든다.
+원소 단계인 group(picture.avatar\_\_img clip) 과 indicator(div)가 완성되었다. 두 요소를 하나의 그룹으로 묶어 분자 단계 요소를 만든다.
 
 사용자의 프로필 선호도에 따른 checkbox 항목을 만드는 것으로 설계했기 때문에, 8개의 요소는 form 태그로 묶여서 사용하는 것이 좋겠다고 판단했다. 이에, 기존에 사용했던 form 태그를 div 로 변경, 동일한 형태의 8개의 div 를 만들고 하나의 form 태그로 묶어 사용했다.
 
-각각의 항목에 대해 img 의 src 를 수정하였고, 성별에 따라 alt 속성을 수정하였다. `input[type="checkbox]` 요소에 name="avatar__check" 속성을 공통적으로 넣어 하나의 체크박스 형태로 묶었고, value 값을 checked-01 ~ checked-08 로 수정하였다.
+각각의 항목에 대해 img 의 src 를 수정하였고, 성별에 따라 alt 속성을 수정하였다. `input[type="checkbox]` 요소에 name="avatar\_\_check" 속성을 공통적으로 넣어 하나의 체크박스 형태로 묶었고, value 값을 checked-01 ~ checked-08 로 수정하였다.
 
 ```html
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face1.jpg"
+      alt="여성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
   <form>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face1.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-01" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face2.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-02" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face3.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-03" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face4.jpg" alt="여성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-04" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face5.jpg" alt="남성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-05" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face6.jpg" alt="남성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-06" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face7.jpg" alt="남성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-07" />
-      </div>
-    </div>
-    <div class="avatar__img">
-      <picture class="avatar__img clip">
-        <img src="images/face8.jpg" alt="남성 얼굴" width="71.111px" height="71.111px" loading="lazy" />
-      </picture>
-      <div>
-        <label for="avatar__check" class="sr-only">마음에 드는 프로필을 선택해 주세요</span></label>
-        <input class="avatar__check" id="avatar__check" name="avatar__check" type="checkbox" value="checked-08" />
-      </div>
-    </div>
+    <label for="avatar__check-01" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-01"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-01"
+    />
   </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face2.jpg"
+      alt="여성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-02" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-02"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-02"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face3.jpg"
+      alt="여성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-03" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-03"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-03"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face4.jpg"
+      alt="여성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-04" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-04"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-04"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face5.jpg"
+      alt="남성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-05" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-05"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-05"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face6.jpg"
+      alt="남성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-06" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-06"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-06"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face7.jpg"
+      alt="남성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-07" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-07"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-07"
+    />
+  </form>
+</div>
+<div class="avatar__img">
+  <picture class="avatar__img clip">
+    <img
+      src="images/face8.jpg"
+      alt="남성 얼굴"
+      width="71"
+      height="71"
+      loading="lazy"
+    />
+  </picture>
+  <form>
+    <label for="avatar__check-08" class="sr-only">온/오프라인 상태</label>
+    <input
+      class="avatar__check"
+      id="avatar__check-08"
+      name="avatar__check"
+      type="checkbox"
+      value="checked-08"
+    />
+  </form>
+</div>
 ```
 
 <br />
 
 ### 4. 조직체 organism 단계 - layout
 
-- #hash : 
+- #hash :
 
 8개의 분자를 감싼 form 요소의 display 속성을 변경하여, 블록 형태에서 flex 형태로 변경하였다. flex 의 여러 속성을 사용하여 위치를 조정하였다.
 
