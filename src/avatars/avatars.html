@@ -1,91 +1,215 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ko-KR">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Avatars 과제</title>
-  <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
-  <link rel="icon" href="/src/assets/favicon/likelion.svg" />
-  <link rel="preload" as="font" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css">
-  <link rel="stylesheet" href="./styles/avatars.css" />
-</head>
-<body>
-  <main>
-    <div class="avatar">
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face1.jpg" alt="여성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-01" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-01" name="avatar__check" type="checkbox" value="checked-01" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face2.jpg" alt="여성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-02" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-02" name="avatar__check" type="checkbox" value="checked-02" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face3.jpg" alt="여성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-03" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-03" name="avatar__check" type="checkbox" value="checked-03" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face4.jpg" alt="여성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-04" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-04" name="avatar__check" type="checkbox" value="checked-04" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face5.jpg" alt="남성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-05" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-05" name="avatar__check" type="checkbox" value="checked-05" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face6.jpg" alt="남성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-06" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-06" name="avatar__check" type="checkbox" value="checked-06" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face7.jpg" alt="남성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-07" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-07" name="avatar__check" type="checkbox" value="checked-07" />
-        </form>
-      </div>
-      <div class="avatar__img">
-        <picture class="avatar__img clip">
-          <img src="images/face8.jpg" alt="남성 얼굴" width="71" height="71" loading="lazy" />
-        </picture>
-        <form>
-          <label for="avatar__check-08" class="sr-only">온/오프라인 상태</label>
-          <input class="avatar__check" id="avatar__check-08" name="avatar__check" type="checkbox" value="checked-08" />
-        </form>
-      </div>
-    </div>
-  </main>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Avatars 과제</title>
+    <link
+      rel="shortcut icon"
+      href="/src/assets/favicon/likelion.ico"
+      type="image/x-icon"
+    />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link
+      rel="preload"
+      as="font"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT-Regular.woff2"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css"
+    />
+    <link rel="stylesheet" href="./styles/avatars.css" />
+  </head>
+  <body>
+    <main>
+      <figure class="avatar">
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face1.jpg"
+              alt="여성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-01" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-01"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-01"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face2.jpg"
+              alt="여성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-02" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-02"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-02"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face3.jpg"
+              alt="여성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-03" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-03"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-03"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face4.jpg"
+              alt="여성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-04" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-04"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-04"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face5.jpg"
+              alt="남성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-05" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-05"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-05"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face6.jpg"
+              alt="남성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-06" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-06"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-06"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face7.jpg"
+              alt="남성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-07" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-07"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-07"
+            />
+          </form>
+        </div>
+        <div class="avatar__img">
+          <picture class="avatar__img clip">
+            <img
+              src="images/face8.jpg"
+              alt="남성 얼굴"
+              width="71"
+              height="71"
+              loading="lazy"
+            />
+          </picture>
+          <form>
+            <label for="avatar__check-08" class="sr-only"
+              >온/오프라인 상태</label
+            >
+            <input
+              class="avatar__check"
+              id="avatar__check-08"
+              name="avatar__check"
+              type="checkbox"
+              value="checked-08"
+            />
+          </form>
+        </div>
+        <figcaption class="sr-only">친구 목록</figcaption>
+      </figure>
+    </main>
+  </body>
 </html>
