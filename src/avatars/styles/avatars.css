@@ -10,41 +10,57 @@
   border: 0;
 }
 
-.avatar__img {
-  width: 64px;
-  height: 64px;
+.avatar {
+  width: 396px;
+  height: 195px;
+  padding: 20px;
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: flex-start;
+  align-content: flex-start;
+  gap: 20px;
+  flex-wrap: wrap;
 
-  border-radius: 50px;
+  box-sizing: border-box;
 
-  position: relative;
-}
-
-.avatar__img.clip {
-  border: 1px solid #fff;
-  overflow: clip;
-}
-
-.avatar__check {
-  margin: 0;
+  .avatar__img {
+    width: 64px;
+    height: 64px;
   
-  position: absolute;
-  right: 0;
-  bottom: 0;
-
-  /* input 요소의 checkbox 속성을 둥글게 만드는 외부 소스 인용 */
-  width: 17.18px;
-  height: 17.18px;
-  border-radius: 50%;
-  border: 1px solid #fff;
-  background-color: #dbdbdb;
-  appearance: none;
-
-  &:checked {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    border-radius: 50px;
+  
+    position: relative;
+  }
+  
+  .avatar__img.clip {
     border: 1px solid #fff;
-    background: #4CFE88;
+    overflow: clip;
+  }
+  
+  .avatar__check {
+    margin: 0;
+    
+    position: absolute;
+    right: 0;
+    bottom: 0;
+  
+    /* input 요소의 checkbox 속성을 둥글게 만드는 외부 소스 인용 */
+    width: 17.18px;
+    height: 17.18px;
+    border-radius: 50%;
+    border: 1px solid #fff;
+    background-color: #dbdbdb;
+    appearance: none;
+  
+    &:checked {
+      border: 1px solid #fff;
+      background: #4CFE88;
+    }
   }
 }
+
