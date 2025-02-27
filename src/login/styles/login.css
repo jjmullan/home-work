@@ -1,4 +1,4 @@
-@import url(/src/common/best-reset.css);
+@import url(./src/common/best-reset.css);
 
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
 :root {
@@ -30,6 +30,7 @@ body {
   padding-block-start: 4.375rem;
   padding-block-end: 6.9375rem;
   margin: 0 auto;
+  box-sizing: border-box;
 
   @media (min-width: 768px) {
     inline-size: 31.25rem;
