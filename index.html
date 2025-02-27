@@ -1,94 +1,52 @@
 <!doctype html>
-<html lang="ko">
+<html lang="ko-KR">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="shortcut icon" href="/src/assets/favicon/likelion.ico" type="image/x-icon" />
+    <link rel="icon" href="/src/assets/favicon/likelion.svg" />
+    <link rel="preload" as="font" href="./src/assets/fonts/PretendardVariable.woff2" />
+    <link rel="stylesheet" href="style.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" /> -->
     <title>HTML/CSS 과제</title>
-    <style>
-      body {
-        margin: 0;
-        padding: 0;
-        font-family: "Noto Sans KR", sans-serif;
-        background-color: #f5f5f5;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-      }
-
-      .profile-card {
-        background: white;
-        border-radius: 20px;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        padding: 2rem;
-        width: 300px;
-        text-align: center;
-      }
-
-      .profile-image {
-        width: 150px;
-        height: 150px;
-        border-radius: 50%;
-        margin-bottom: 1.5rem;
-        object-fit: cover;
-        border: 5px solid #f0f0f0;
-      }
-
-      .name {
-        font-size: 1.5rem;
-        font-weight: bold;
-        color: #333;
-        margin-bottom: 0.5rem;
-      }
-
-      .bio {
-        color: #666;
-        line-height: 1.6;
-        margin-bottom: 1.5rem;
-      }
-
-      .homework-links {
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        margin: 0;
-        padding: 0;
-        list-style: none;
-      }
-
-      .homework-links a {
-        color: #555;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-
-      .homework-links a:hover {
-        color: #007bff;
-      }
-    </style>
-    <link
-      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-    />
   </head>
   <body>
-    <div class="profile-card">
-      <img
-        src="./src/assets/images/suhyeon.jpeg"
-        alt=""
-        class="profile-image"
-      />
-      <h1 class="name">최영준</h1>
-      <p class="bio">멋쟁이 사자처럼 프론트엔드 부트캠프 13기 최영준 입니다.</p>
-      <p>과제 결과는 링크를 선택해주세요.</p>
-      <ul class="homework-links">
-        <li><a href="./src/md/markdown.md">마크다운 문법</a></li>
-        <li><a href="./src/md/retrospect.md">회고</a</li>
-      </ul>
-    </div>
+    <main class="profile-card">
+      <img src="./src/assets/images/crayon.jpeg" alt="" class="profile-image" />
+      <h1 class="mainName">최영준</h1>
+      <div class="bio">
+        <p>멋쟁이 사자처럼 프론트엔드 부트캠프 13기</p>
+        <p><span class="smallName">최영준</span>입니다.</p>
+      </div>
+      <table class="homework-links">
+        <col class="weekly" />
+        <col class="context" />
+        <col class="files" />
+        <thead>
+          <tr>
+            <th scope="col">주차</th>
+            <th scope="col">내용</th>
+            <th scope="col">과제물</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>2월 1, 2주차</td>
+            <td>마크다운 문법 작성 및 1, 2주차 회고</td>
+            <td><a href="./src/md/markdown.md">과제</a> 및 <a href="./src/md/retrospect.md">회고</a></td>
+          </tr>
+          <tr>
+            <td>2월 3주차</td>
+            <td>Avatar 화면 완성 및 3주차 회고</td>
+            <td><a href="./src/avatars/avatars.html">과제</a> 및 <a href="./src/avatars/avatars.md">회고</a></td>
+          </tr>
+          <tr>
+            <td>2월 4주차</td>
+            <td>Naver 로그인 화면 완성 및 3주차 회고</td>
+            <td><a href="./src/login/login.html">과제</a> 및 <a href="./src/login/login.md">회고</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </main>
   </body>
 </html>

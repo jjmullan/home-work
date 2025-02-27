@@ -1,0 +1,91 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Pretendard", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.profile-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  min-width: 20rem;
+  min-height: 27rem;
+  padding: 2rem;
+  text-align: center;
+
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.profile-image {
+  inline-size: 12.5rem;
+  block-size: 12.5rem;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 5px solid #f0f0f0;
+}
+
+.mainName {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.bio {
+  color: #666;
+  line-height: 0.5;
+
+  .smallName {
+    color: black;
+    font-weight: 400;
+  }
+}
+
+.homework-links {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+  color: #555;
+  font-size: 0.875rem;
+
+  th {
+    padding-block-end: 0.3rem;
+    
+    color: black
+  }
+
+  td {
+    padding-block: 0.2rem;
+    padding-inline: 0.8rem;
+    font-size: 0.7rem;
+    position: relative;
+  }
+
+  tr > td:not(:last-child) {
+    text-align: left;
+  }
+
+  a:not(:hover) {
+    color: #555;
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  
+  a:hover {
+    color: #007bff;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+}
+
