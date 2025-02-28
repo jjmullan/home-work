@@ -1,6 +1,7 @@
 # Created by https://www.toptal.com/developers/gitignore/api/node,windows,osx,visualstudiocode
 # Edit at https://www.toptal.com/developers/gitignore?templates=node,windows,osx,visualstudiocode
 .DS_Store
+
 ### Node ###
 # Logs
 logs
@@ -217,3 +218,7 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,windows,osx,visualstudiocode
 .vscode/settings.json
+<<<<<<< HEAD
+=======
+prettierrc.cjs
+>>>>>>> main
