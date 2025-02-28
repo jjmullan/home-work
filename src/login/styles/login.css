@@ -30,8 +30,15 @@ a {
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
 .login {
   inline-size: 100%;
+  block-size: 100%;
   padding-inline: 1.25rem;
   padding-block-start: 4.375rem;
+
+  @media (min-width: 768px) {
+    inline-size: 31.25rem;
+    margin-inline: auto;
+    padding-inline: 1.25rem;
+  }
 }
 
 .logo__wrapper {
@@ -91,6 +98,10 @@ a {
 
   [type="password"]:invalid:focus + .input__errorMessage {
     display: block;
+  }
+
+  [type="password"] {
+    margin-block-start: 0;
   }
 
 }
