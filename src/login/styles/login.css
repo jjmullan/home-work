@@ -1,1 +1,54 @@
+@import "../common/reset.css";
+
+/* default */
+:root {
+  /* color */
+  --color-primary: #03cf5d;
+  --color-warning: #ff1414;
+  --color-gray10: #dadada;
+  --color-gray20: #999;
+  --color-default: #121212;
+  --color-black: #333;
+  --color-white: #fff;
+}
+
+body {
+  inline-size: 100%;
+  font-size: 1rem;
+  line-height: 1.15;
+  color: var(--color-default);
+  background: var(--color-white);
+}
+
+a {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+}
+
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+.logo__wrapper {
+  .logo__link {
+    inline-size: 14.375rem;
+    margin-inline: auto;
+  }
+
+  svg {
+    inline-size: 100%;
+  }
+}
+
+.input__email {
+}
+
+.input__pwd {
+}
+
+.submit {
+}
+
+.input__checkbox--loginRemain {
+}
+
+.input__checkbox--ipSecurity {
+}
