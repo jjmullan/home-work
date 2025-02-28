@@ -32,7 +32,7 @@ module.exports = {
   useTabs: false,
 
   // 행폭 설정 (줄 길이가 설정 값보다 길어지면 자동 개행)
-  printWidth: 180,
+  printWidth: 80,
 
   // 산문 래핑 설정
   proseWrap: "always",
