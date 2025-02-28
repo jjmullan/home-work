@@ -10,6 +10,7 @@
   --color-default: #121212;
   --color-black: #333;
   --color-white: #fff;
+  --color-inputBgc: #e9f0fd;
 }
 
 body {
@@ -27,6 +28,12 @@ a {
 }
 
 /* CSS를 활용하여 레이아웃 및 스타일링을 완성해주세요 */
+.login {
+  inline-size: 100%;
+  padding-inline: 1.25rem;
+  padding-block-start: 4.375rem;
+}
+
 .logo__wrapper {
   .logo__link {
     inline-size: 14.375rem;
@@ -38,17 +45,167 @@ a {
   }
 }
 
-.input__email {
+.input {
+  inline-size: 100%;
+  margin-block-start: 2.8125rem;
+
+  font-size: 0.875rem;
+  color: inherit;
+
+  [type="email"],
+  [type="password"] {
+    inline-size: 100%;
+    block-size: 2.8125rem;
+    padding-block-start: 0.875rem;
+    padding-block-end: 0.875rem;
+    padding-inline-start: 0.875rem;
+
+    border: 1px solid var(--color-gray10, #dadada);
+    background-color: var(--color-white, #fff);
+    font-size: inherit;
+    color: inherit;
+
+    &:focus {
+      border: 1px solid var(--color-primary, #03cf5d);
+      background-color: var(--color-inputBgc, #e9f0fd);
+    }
+  }
+
+  .input__errorMessage {
+    display: none;
+    color: var(--color-warning, #ff1414);
+  }
+
+  .input__pwd {
+    margin-block-start: 0.625rem;
+  }
+
+  .input__errorMessage {
+    margin-block-start: 0.4375rem;
+    font-size: 0.75rem;
+  }
+
+  [type="email"]:invalid:focus + .input__errorMessage {
+    display: block;    
+  }
+
+  [type="password"]:invalid:focus + .input__errorMessage {
+    display: block;
+  }
+
 }
 
-.input__pwd {
+.input__submit {
+  display: block;
+  inline-size: 100%;
+  block-size: 2.8125rem;
+  margin-block-start: 1.25rem;
+  padding-block: 1rem;
+
+  border: 1px solid var(--color-gray10);
+  background-color: var(--color-primary, #03cf5d);
+  color: var(--color-white, #fff);
+  font-size: 1rem;
 }
 
-.submit {
-}
+.input__checkbox--wrapper {
+  margin-block-start: 0.625rem;
 
-.input__checkbox--loginRemain {
-}
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
 
-.input__checkbox--ipSecurity {
+  label {
+    display: inline;
+    line-height: 1;
+    align-content: center;
+    padding-block-start: 0.125rem;
+    font-size: 1rem;
+    color: var(--color-default);
+  }
+
+  .input__checkbox--loginRemain {
+    flex-basis: 100%;
+
+    display: flex;
+    justify-content: right;
+    gap: 0.625rem;
+
+    input {
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      appearance: none;
+
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        inline-size: 1.5rem;
+        block-size: 1.5rem;
+        background-image: url(../assets/checkbox-unchecked.svg);
+        background-size: cover;
+      }
+
+      &:checked::before {
+        background-image: url(../assets/checkbox.svg);
+      }
+    }
+
+    @media (min-width: 768px) {
+      justify-content: left;
+    }
+  }
+
+  .input__checkbox--ipSecurity {
+    flex-basis: 100%;
+
+    display: none;
+    justify-content: right;
+    /* gap: 0.625rem; */
+
+    font-size: 1rem;
+    color: var(--color-default);
+
+    position: relative;
+
+    input {
+      appearance: none;
+    }
+
+    a {
+      inline-block;
+      position: relative;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      inset-block-start: .2188rem;
+      margin-inline-start: .625rem;
+      margin-inline-end: .25rem;
+
+      color: var(--color-primary, #03cf5d);
+      font-weight: 700;
+    }
+
+    input:not(:checked) ~ a {
+      display: none;
+    }
+
+    /* 강사님께) IP 보안 토글 코드만 3-4시간 작성했는데, 이 방법 말고는 정말 아무 것도 안되네요.. 더 공부하겠습니다ㅠ */
+    input:not(:checked)::after {
+      content: "OFF";
+      display: inline-block;
+      position: relative;
+      inline-size: 1.5rem;
+      block-size: 1.5rem;
+      inset-block-start: .2188rem;
+      margin-inline-start: .625rem;
+      margin-inline-end: .25rem;
+      color: var(--color-gray20, #999);
+      font-weight: 700;;
+    }
+
+    @media (min-width: 768px) {
+      display: flex;
+    }
+  }
 }
