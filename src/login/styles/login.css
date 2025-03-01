@@ -93,7 +93,7 @@ a {
   }
 
   [type="email"]:user-invalid:focus + .input__errorMessage {
-    display: block;    
+    display: block;
   }
 
   [type="password"]:user-invalid:focus + .input__errorMessage {
@@ -103,7 +103,6 @@ a {
   [type="password"] {
     margin-block-start: 0;
   }
-
 }
 
 .input__submit {
@@ -185,13 +184,13 @@ a {
     }
 
     a {
-      inline-block;
+      display: inline-block;
       position: relative;
       inline-size: 1.5rem;
       block-size: 1.5rem;
-      inset-block-start: .2188rem;
-      margin-inline-start: .625rem;
-      margin-inline-end: .25rem;
+      inset-block-start: 0.2188rem;
+      margin-inline-start: 0.625rem;
+      margin-inline-end: 0.25rem;
 
       color: var(--color-primary, #03cf5d);
       font-weight: 700;
@@ -208,11 +207,11 @@ a {
       position: relative;
       inline-size: 1.5rem;
       block-size: 1.5rem;
-      inset-block-start: .2188rem;
-      margin-inline-start: .625rem;
-      margin-inline-end: .25rem;
+      inset-block-start: 0.2188rem;
+      margin-inline-start: 0.625rem;
+      margin-inline-end: 0.25rem;
       color: var(--color-gray20, #999);
-      font-weight: 700;;
+      font-weight: 700;
     }
 
     @media (min-width: 768px) {
