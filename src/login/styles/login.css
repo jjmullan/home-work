@@ -92,11 +92,11 @@ a {
     font-size: 0.75rem;
   }
 
-  [type="email"]:invalid:focus + .input__errorMessage {
+  [type="email"]:user-invalid:focus + .input__errorMessage {
     display: block;    
   }
 
-  [type="password"]:invalid:focus + .input__errorMessage {
+  [type="password"]:user-invalid:focus + .input__errorMessage {
     display: block;
   }
 
