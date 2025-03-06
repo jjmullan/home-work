@@ -75,7 +75,8 @@ body {
 
 .aside {
   columns: 3;
-  padding: var(--large-spacing);
+  padding-inline: var(--large-spacing);
+  padding-block: var(--large-spacing);
   border-bottom: 1px solid var(--gray);
 
   .aside__content {
@@ -96,6 +97,7 @@ body {
 
   @media (min-width: 1024px) {
     inline-size: 75rem;
+    padding-inline: 0;
     margin: 0 auto;
 
     /* columns */
@@ -111,6 +113,7 @@ body {
   flex-flow: column nowrap;
   align-items: start;
   justify-content: start;
+  row-gap: var(--x-small-spacing);
 
   font-size: var(--x-small-text);
 
