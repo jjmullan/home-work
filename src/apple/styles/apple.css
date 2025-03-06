@@ -3,6 +3,69 @@
 /* default */
 body {
   line-height: 1;
+
+  /* position */
+  position: relative;
+
+  /* grid */
+  display: grid;
+
+  /* bgc */
+  background-color: var(--white, #f5f5f7);
+}
+
+.navigation {
+  /* position */
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 0;
+  background-color: var(--white, #f5f5f7);
+
+  /* flex */
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+
+  .logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    inline-size: 46px;
+    aspect-ratio: 1 / 1;
+
+    &:hover {
+      fill: gray;
+
+      /* hover transition */
+      transition: fill 1s;
+    }
+  }
+
+  svg {
+    inline-size: 100%;
+  }
+
+  ul,
+  li {
+    display: none;
+  }
+
+  @media (min-width: 1024px) {
+    .logo {
+      margin: 0;
+    }
+
+    ul {
+      display: contents;
+    }
+
+    li {
+      display: block;
+      font-size: 0.8rem;
+    }
+  }
 }
 
 .main {
@@ -68,16 +131,31 @@ body {
       padding: var(--x-small-spacing, 0.5rem);
       font-size: var(--xx-small-text, 0.75rem);
       border-radius: 100px;
+
+      &:hover {
+        transform: scale(1.1);
+        transition: all 1s;
+      }
     }
 
     .fill.blue {
       background-color: var(--blue-300, #0071e3);
       color: var(--white, #f5f5f7);
+
+      &:hover {
+        background-color: var(--blue-100, #2997ff);
+      }
     }
 
     .outline.blue {
       border: 1px solid currentColor;
       color: var(--blue-300);
+
+      &:hover {
+        border: 1px solid var(--blue-100, #2997ff);
+        background-color: var(--blue-100, #2997ff);
+        color: var(--white, #f5f5f7);
+      }
     }
 
     .fill.bk {
@@ -88,22 +166,12 @@ body {
     .outline.bk {
       border: 1px solid currentColor;
       color: var(--black);
+
+      &:hover {
+        background-color: var(--black, #1d1d1f);
+        color: var(--white, #f5f5f7);
+      }
     }
-  }
-}
-
-/* media-Query */
-
-@media (min-width: 1024px) {
-  .main {
-    display: grid;
-    column-gap: var(--base-spacing, 1rem);
-  }
-
-  .iPad-Pro,
-  .iPad-Air,
-  .iPhone-15Pro {
-    grid-column: span 2;
   }
 }
 
@@ -187,5 +255,30 @@ body {
 
   @media (min-width: 1024px) {
     background-image: url(../products/airpods_pro_2x.jpeg);
+  }
+}
+
+/* media-Query */
+@media (min-width: 1024px) {
+  .main {
+    column-gap: var(--base-spacing, 1rem);
+
+    .item {
+      padding-block-start: var(--extra-large-spacing, 3.75rem);
+    }
+
+    .item__title {
+      font-size: var(--extra-large-text, 2.5rem);
+    }
+
+    .item__subtitle {
+      font-size: var(--medium-text, 1.3125rem);
+    }
+
+    .iPad-Pro,
+    .iPad-Air,
+    .iPhone-15Pro {
+      grid-column: span 2;
+    }
   }
 }
