@@ -1,3 +1,123 @@
 @import "./card-component.css";
 
-/* 카드 레이아웃 */
+/* default */
+body {
+  line-height: 1;
+}
+
+.main {
+  display: grid;
+  row-gap: var(--base-spacing, 1rem);
+}
+
+.item {
+  inline-size: 100%;
+  block-size: var(--size, 31.25rem);
+  padding-block-start: var(--large-spacing, 2.5rem);
+
+  /* background */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  /* flex */
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: start;
+  align-items: center;
+  gap: var(--small-spacing, 0.75rem);
+
+  .item__title {
+    font-size: var(--large-text, 2rem);
+    font-weight: bold;
+  }
+
+  .item__subtitle {
+    font-size: var(--base-text, 1.1875rem);
+    font-weight: 400;
+
+    display: flex;
+    flex-flow: column nowrap;
+    row-gap: var(--x-small-spacing, 0.5rem);
+
+    > * {
+      text-align: center;
+    }
+  }
+
+  .wh {
+    color: var(--white, #f5f5f7);
+  }
+
+  .bk {
+    color: var(--black, #1d1d1f);
+  }
+
+  .item__tbc {
+    font-size: var(--small-text, 1.0625rem);
+    color: var(--gray);
+  }
+
+  .item__link {
+    display: flex;
+    flex-flow: row nowrap;
+    column-gap: var(--base-spacing, 1rem);
+
+    .fill,
+    .outline {
+      padding: var(--x-small-spacing, 0.5rem);
+      font-size: var(--xx-small-text, 0.75rem);
+      border-radius: 100px;
+    }
+
+    .fill.blue {
+      background-color: var(--blue-300, #0071e3);
+      color: var(--white, #f5f5f7);
+    }
+
+    .outline.blue {
+      border: 1px solid currentColor;
+      color: var(--blue-300);
+    }
+
+    .fill.bk {
+      background-color: var(--black, #1d1d1f);
+      color: var(--white, #f5f5f7);
+    }
+
+    .outline.bk {
+      border: 1px solid currentColor;
+      color: var(--black);
+    }
+  }
+}
+
+/* iPad-Pro */
+.iPad-Pro {
+  background-image: url(../products/ipad_pro.jpeg);
+}
+
+/* iPad-Air */
+.iPad-Air {
+  background-image: url(../products/ipad_air.jpeg);
+}
+
+/* iPhone-15Pro */
+.iPhone-15Pro {
+  background-image: url(../products/iphone15_pro.jpeg);
+
+  .item__tbc {
+    display: none;
+  }
+}
+
+/* iPhone-15 */
+.iPhone-15 {
+  background-image: url(../products/iphone15.jpeg);
+
+  .item__tbc {
+    display: none;
+  }
+}
+
+/* WATCH */
